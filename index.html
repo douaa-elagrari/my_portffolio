@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://unpkg.com/typed.js@2.0.15/dist/typed.umd.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <title>Douaa Elagrari's Portfolio</title>
+    <style>
+      .card-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 20px;
+        justify-content: center;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+        background-color: #101010 !important;
+        border: 1px solid #5d3fd3;
+      }
+
+      .card-content {
+        padding: 20px;
+      }
+
+      .card-title {
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+        padding-right: 40px;
+      }
+
+      .card-text {
+        margin-bottom: 20px;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        line-height: 1.5;
+        transition: all 0.3s ease;
+      }
+
+      .arrow-btn {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: #5d3fd3;
+        font-size: 26px;
+        transition: all 0.3s ease;
+        z-index: 1;
+        padding: 5px;
+      }
+
+      .arrow-btn:hover {
+        color: #4a2eb8;
+        transform: scale(1.1);
+      }
+
+      .bx-right-top-arrow-circle {
+        display: none;
+      }
+
+      .card.expanded .card-text {
+        -webkit-line-clamp: unset;
+        display: block;
+      }
+      .card i {
+        background-color: transparent !important;
+      }
+      .card.expanded .bx-right-down-arrow-circle {
+        display: none;
+      }
+
+      .card.expanded .bx-right-top-arrow-circle {
+        display: inline-block;
+      }
+      .card-title {
+        color: #ffffff !important; 
+      }
+
+      .card-text {
+        color: #f0f0f0 !important; 
+      }
+
+      .arrow-btn {
+        color: #ffffff !important; 
+      }
+      .card {
+        width: 300px;
+        border: 1px solid #000;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 15px 15px #000;
+        transition: all 0.3s ease;
+        position: relative;
+        background-color: #222222 !important; /* Important forces override */
+      }
+
+      .card-content {
+        padding: 20px;
+        background-color: transparent !important; /* Make content area transparent */
+      }
+
+      .card-title,
+      .card-text {
+        background-color: transparent !important;
+      }
+      .arrow-btn:hover {
+        color: #e0e0e0 !important; 
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="header">
+      <nav class="navbar">
+        <a href="#" class="nav-logo">Douaa.</a>
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="#home" class="nav-link" class="sl">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="#skillss" class="nav-link">Skills</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a href="#" class="nav-link">Projects</a>
+          </li> -->
+          <li class="nav-item">
+            <a href="#services" class="nav-link" class="sl">Services</a>
+          </li>
+          <li class="nav-item">
+            <a href="#contact" class="nav-link" class="sl">Contact</a>
+          </li>
+        </ul>
+
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </nav>
+    </header>
+    <section id="home" class="section">
+      <div class="home">
+        <div class="home-content">
+          <div data-aos="slide-right">
+            <h3 data-aos="slide-right">Hello, It's Me</h3>
+            <h1 id="me">Douaa Elagrari</h1>
+            <h3>
+              and i am a
+              <span class="text" id="typed"></span>
+            </h3>
+            <p>
+              Web developer and UI/UX designer with over 2 years of
+              experience,<br />
+              passionate about crafting seamless digital experiences.<br />
+              Computer scientist and AI engineer, driven by innovation and
+              problem-solving.
+            </p>
+            <div class="container">
+              <div class="social_media">
+                <a href="#"><i class="bx bxl-facebook"></i></a>
+                <a href="#"><i class="bx bxl-instagram-alt"></i></a>
+                <a href="https://www.linkedin.com/in/douaa-elagrari-1163b6314/"
+                  ><i class="bx bxl-linkedin"></i
+                ></a>
+                <a href="https://github.com/douaa-elagrari"><i class="bx bxl-github"></i></a>
+              </div>
+
+              <div class="models">
+                <button class="btn">
+                  <span class="btn-text">
+                    <a href="./Douaa's_CV.pdf" download="Douaa Elagrari's CV"
+                      >Download CV</a
+                    >
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="my_pic" data-aos="slide-left">
+            <img src="..\images\my_pic.jpg" alt="picture of Douaa Elagrari" />
+          </div>
+          
+        </div>
+      </div>
+    </section>
+    <section id="skillss">
+      <h1
+        class="heading"
+        data-aos="slide-up"
+        data-aos-duration="1000"
+        data-aos-easing="ease-out-cubic"
+        data-aos-offset="200"
+      >
+        My Technical & Professional Skills
+      </h1>
+      <article class="skills">
+        <div class="container1" id="skills" data-aos="slide-right">
+          <div class="Technical-bars">
+            <div class="barr">
+              <i class="bx bxl-html5" style="color: #e34f26"></i>
+              <div class="indfo">
+                <span>HTML</span>
+              </div>
+              <div class="progress-line">
+                <span style="--progress: 90%; width: 90%"></span>
+                <div class="progress-label" style="--progress: 90%">90%</div>
+              </div>
+            </div>
+            <div class="barr">
+              <i class="bx bxl-css3" style="color: #1572b6"></i>
+              <div class="indfo">
+                <span>CSS</span>
+              </div>
+              <div class="progress-line">
+                <span style="--progress: 85%; width: 85%"></span>
+                <div class="progress-label" style="--progress: 85%">85%</div>
+              </div>
+            </div>
+            <div class="barr">
+              <i class="bx bxl-javascript" style="color: #f7df1e"></i>
+              <div class="indfo">
+                <span>JavaScript</span>
+              </div>
+              <div class="progress-line">
+                <span style="--progress: 80%; width: 80%"></span>
+                <div class="progress-label" style="--progress: 80%">80%</div>
+              </div>
+            </div>
+            <div class="barr">
+              <i class="bx bxl-php" style="color: #777bbf"></i>
+              <div class="indfo">
+                <span>Php</span>
+              </div>
+              <div class="progress-line">
+                <span style="--progress: 85%; width: 85%"></span>
+                <div class="progress-label" style="--progress: 85%">85%</div>
+              </div>
+            </div>
+            <div class="barr">
+              <i class="bx bxl-python" style="color: #3776ab"></i>
+              <div class="indfo">
+                <span>Python</span>
+              </div>
+              <div class="progress-line">
+                <span style="--progress: 85%; width: 85%"></span>
+                <div class="progress-label" style="--progress: 85%">85%</div>
+              </div>
+            </div>
+            <div class="barr">
+              <i class="bx bxl-react" style="color: #61dafb"></i>
+              <div class="indfo">
+                <span>React</span>
+              </div>
+              <div class="progress-line">
+                <span style="--progress: 60%; width: 60%"></span>
+                <div class="progress-label" style="--progress: 60%">60%</div>
+              </div>
+            </div>
+            <div class="barr">
+              <i class="bx bxl-flutter" style="color: #02569b" ;></i>
+              <div class="indfo">
+                <span>Flutter</span>
+              </div>
+              <div class="progress-line">
+                <span style="--progress: 70%; width: 70%"></span>
+                <div class="progress-label" style="--progress: 70%">70%</div>
+              </div>
+            </div>
+            <div class="barr">
+              <i class="bx bxl-c-plus-plus" style="color: #fff"></i>
+              <div class="indfo">
+                <span>C++</span>
+              </div>
+              <div class="progress-line">
+                <span style="--progress: 85%; width: 85%"></span>
+                <div class="progress-label" style="--progress: 85%">60%</div>
+              </div>
+            </div>
+            <div class="barr">
+              <i class="bx bxl-mongodb" style="color: #47a248"></i>
+              <div class="indfo">
+                <span>Mongodb</span>
+              </div>
+              <div class="progress-line">
+                <span style="--progress: 75%; width: 75%"></span>
+                <div class="progress-label" style="--progress: 90%">75%</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="circ_bars" data-aos="slide-left">
+          <div>
+            <div
+              class="circular-progress"
+              data-percentage="75"
+              data-progress-color="#5D3FD3"
+              data-bg-color="black"
+            >
+              <div class="inner-circle"></div>
+              <p class="percentage">0%</p>
+            </div>
+            <p>Problem Solving</p>
+          </div>
+
+          <div>
+            <div
+              class="circular-progress"
+              data-percentage="80"
+              data-progress-color="#5D3FD3"
+              data-bg-color="black"
+            >
+              <div class="inner-circle"></div>
+              <p class="percentage">0%</p>
+            </div>
+            <p>Leadership</p>
+          </div>
+          <div>
+            <div
+              class="circular-progress"
+              data-percentage="65"
+              data-progress-color="#5D3FD3"
+              data-bg-color="black"
+            >
+              <div class="inner-circle"></div>
+              <p class="percentage">0%</p>
+            </div>
+            <p>Creativity</p>
+          </div>
+          <div>
+            <div
+              class="circular-progress"
+              data-percentage="85"
+              data-progress-color="#5D3FD3"
+              data-bg-color="black"
+            >
+              <div class="inner-circle"></div>
+              <p class="percentage">0%</p>
+            </div>
+            <p>Communication</p>
+          </div>
+        </div>
+      </article>
+    </section>
+    <section id="services">
+      <h1
+        class="heading"
+        data-aos="slide-up"
+        data-aos-duration="1000"
+        data-aos-easing="ease-out-cubic"
+        data-aos-offset="200"
+      >
+        My Services
+      </h1>
+      <div class="card-container">
+        <!-- Card 1 -->
+        <div class="card" data-aos="slide-up">
+          <button class="arrow-btn" onclick="toggleReadMore(event, this)">
+            <i class="bx bx-right-down-arrow-circle"></i>
+            <i class="bx bx-right-top-arrow-circle"></i>
+          </button>
+          <div class="card-content">
+            <h3 class="card-title">
+              Full-Stack<br />
+              Development
+            </h3>
+            <p class="card-text">
+              I build responsive and scalable websites using modern front-end
+              and back-end technologies. From UI/UX design to database
+              management, I ensure a seamless user experience. I develop RESTful
+              APIs, optimize performance, and implement security best practices.
+              My expertise includes frameworks like React. Whether it’s an
+              e-commerce site, dashboard, or SaaS platform, I deliver
+              high-quality solutions.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card" data-aos="slide-up">
+          <button class="arrow-btn" onclick="toggleReadMore(event, this)">
+            <i class="bx bx-right-down-arrow-circle"></i>
+            <i class="bx bx-right-top-arrow-circle"></i>
+          </button>
+          <div class="card-content">
+            <h3 class="card-title">Mobile App Development (iOS & Android)</h3>
+            <p class="card-text">
+              I develop cross-platform and native mobile applications with
+              smooth UI and performance. Using Flutter, React Native, Swift, and
+              Kotlin, I build feature-rich mobile experiences. I integrate
+              real-time databases, push notifications, and third-party APIs. My
+              focus is on performance optimization, battery efficiency, and
+              offline support. From prototyping to publishing on the App Store &
+              Play Store, I handle the full cycle.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card" data-aos="slide-up">
+          <button class="arrow-btn" onclick="toggleReadMore(event, this)">
+            <i class="bx bx-right-down-arrow-circle"></i>
+            <i class="bx bx-right-top-arrow-circle"></i>
+          </button>
+          <div class="card-content">
+            <h3 class="card-title">AI & Machine Learning Integration</h3>
+            <p class="card-text">
+              I implement AI-driven features in websites and mobile apps to
+              enhance automation. From recommendation systems to smart chatbots,
+              I use machine learning to improve UX. I work with TensorFlow,
+              PyTorch, and OpenAI APIs to create intelligent applications. My AI
+              models can analyze user behavior, automate tasks, and improve
+              decision-making. I help businesses leverage AI for predictive
+              analytics, fraud detection, and automation.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="card" data-aos="slide-up">
+          <button class="arrow-btn" onclick="toggleReadMore(event, this)">
+            <i class="bx bx-right-down-arrow-circle"></i>
+            <i class="bx bx-right-top-arrow-circle"></i>
+          </button>
+          <div class="card-content">
+            <h3 class="card-title">Data Science & Market Analysis</h3>
+            <p class="card-text">
+              I transform raw data into actionable insights for better business
+              decisions. Using Python, Pandas, and Power BI, I analyze trends,
+              customer behavior, and KPIs. I develop AI-powered forecasting
+              models to predict market trends and sales performance. My
+              expertise includes data visualization, pattern recognition, and
+              anomaly detection. I help businesses optimize their strategies
+              using real-time data analytics.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="card" data-aos="slide-up">
+          <button class="arrow-btn" onclick="toggleReadMore(event, this)">
+            <i class="bx bx-right-down-arrow-circle"></i>
+            <i class="bx bx-right-top-arrow-circle"></i>
+          </button>
+          <div class="card-content">
+            <h3 class="card-title">AI Model Development & Deployment</h3>
+            <p class="card-text">
+              I design, train, and deploy custom AI models for real-world
+              applications. Using deep learning (CNNs, RNNs, LSTMs), I build
+              models for vision, NLP, and automation. I deploy AI models to
+              cloud platforms (AWS, GCP) or edge devices for real-time use. My
+              models can enhance image recognition, language processing, and
+              intelligent automation. I ensure high accuracy, scalability, and
+              optimization for business use cases.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="card" data-aos="slide-up">
+          <button class="arrow-btn" onclick="toggleReadMore(event, this)">
+            <i class="bx bx-right-down-arrow-circle"></i>
+            <i class="bx bx-right-top-arrow-circle"></i>
+          </button>
+          <div class="card-content">
+            <h3 class="card-title">
+              Data Management & Database Solutions (SQL & NoSQL)
+            </h3>
+            <p class="card-text">
+              I design and manage SQL & NoSQL databases for efficient, scalable
+              data storage. Using Oracle, MySQL, PostgreSQL, and MongoDB, I
+              ensure structured and flexible data handling. I implement PL/SQL
+              procedures, indexing, and transactions for relational databases.
+              For NoSQL, I work with MongoDB to handle unstructured and
+              real-time data. I help businesses choose the right database model
+              based on performance, scalability, and security needs.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        function toggleReadMore(event, button) {
+          event.preventDefault();
+          const card = button.closest(".card");
+          card.classList.toggle("expanded");
+        }
+      </script>
+    </section>
+    <!-- contact -->
+    <section id="contact" class="contact">
+      <div class="form-container" data-aos="slide-right">
+        <h2>Let's work together!</h2>
+        <form id="contactForm">
+          <div class="form-group">
+            <input
+              type="text"
+              id="firstName"
+              placeholder="First Name"
+              required
+            />
+            <input type="text" id="lastName" placeholder="Last Name" required />
+          </div>
+          <div class="form-group">
+            <input
+              type="email"
+              id="email"
+              placeholder="Email Address"
+              required
+            />
+            <input type="tel" id="phone" placeholder="Phone Number" />
+          </div>
+          <select id="service" required>
+            <option value="">Choose a service</option>
+            <option value="web">Web Development</option>
+            <option value="design">UI/UX Design</option>
+            <option value="marketing">Digital Marketing</option>
+          </select>
+          <textarea
+            id="message"
+            placeholder="Enter a message"
+            required
+          ></textarea>
+          <button type="submit" class="submit">Submit</button>
+        </form>
+      </div>
+      <article id="contact-me" data-aos="slide-left">
+        <h2>Contact</h2>
+        <div class="contact-me">
+          <div>
+            <a href="#"><i class="bx bx-phone"></i></a>
+            <p>
+              phone: <br />
+              +213 698685353
+            </p>
+          </div>
+
+          <div>
+            <a href="#"><i class="bx bxl-gmail"></i></a>
+            <p>
+              Email: <br />
+              douaa.elagrari@ensia.edu.dz
+            </p>
+          </div>
+
+          <div>
+            <a href="#"><i class="bx bx-map"></i></a>
+            <p>
+              Address: <br />
+              Hay Nasr zone 2, Chlef, Algeria
+            </p>
+          </div>
+        </div>
+      </article>
+    </section>
+    
+
+    <script src="./script.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
+</html>
