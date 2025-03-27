@@ -232,24 +232,29 @@ function showError(fieldId, message) {
   errorMessageElement.textContent = message;
 }
 
-function injectSchema() {
+// Add this script RIGHT AFTER your opening <body> tag
+(function() {
+  // 1. Create the schema data
   const schema = {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Douaa Elagrari",
     "jobTitle": "Mobile Web & AI Integration Developer",
-    "url": window.location.href,
+    "url": document.location.href,
     "sameAs": [
       "https://github.com/douaa-elagrari",
-      "https://www.linkedin.com/in/douaa-elagrari-1163b6314/"
-    ]
+      "https://www.linkedin.com/in/douaa-elagrari-1163b6314/" 
+    ],
+    "image": "./my_pic.png"
   };
-  
+
   const script = document.createElement('script');
   script.type = 'application/ld+json';
   script.text = JSON.stringify(schema);
-  document.head.appendChild(script);
-}
-
-// Call in your main app file
-injectSchema();
+  
+  document.head.insertBefore(script, document.head.firstChild);
+  
+  const noscript = document.createElement('noscript');
+  noscript.innerHTML = `<script type="application/ld+json">${JSON.stringify(schema)}</script>`;
+  document.body.prepend(noscript);
+})();
