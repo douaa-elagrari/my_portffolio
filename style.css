@@ -751,7 +751,7 @@ button a {
   grid-template-rows: 1fr 1fr;
   gap: 20%;
   margin-right: 50px;
-  margin-left: 10px;
+  margin-left: 17px;
 }
 .skills {
   margin-left: 0;
@@ -1001,3 +1001,8 @@ body {
   max-width: 100vw;
   overflow-x: hidden;
 }
+.error-message {
+    color: #8B0000;
+    font-size: 0.9em;
+    margin-top: 0.2em;
+  }

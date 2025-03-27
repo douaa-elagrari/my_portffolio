@@ -77,30 +77,21 @@ Array.from(circularProgress).forEach((progressBar) => {
   }, speed);
 });
 
-document
-  .getElementById("contactForm")
-  .addEventListener("submit", function (event) {
-    event.preventDefault(); // Prevent form from submitting normally
+function showError(fieldId, message) {
+  const field = document.getElementById(fieldId);
+  const errorMessageId = `error${
+    fieldId.charAt(0).toUpperCase() + fieldId.slice(1)
+  }`;
+  let errorMessageElement = document.getElementById(errorMessageId);
 
-    let firstName = document.getElementById("firstName").value;
-    let lastName = document.getElementById("lastName").value;
-    let email = document.getElementById("email").value;
-    let service = document.getElementById("service").value;
-    let message = document.getElementById("message").value;
+  if (!errorMessageElement) {
+    errorMessageElement = document.createElement("div");
+    errorMessageElement.className = "error-message";
+    field.parentNode.insertBefore(errorMessageElement, field.nextSibling);
+  }
 
-    if (
-      firstName === "" ||
-      lastName === "" ||
-      email === "" ||
-      service === "" ||
-      message === ""
-    ) {
-      alert("Please fill out all required fields.");
-      return;
-    }
-
-    alert("Form submitted successfully! ✅");
-  });
+  errorMessageElement.textContent = message;
+}
 
 function toggleReadMore(event, button) {
   event.preventDefault();
@@ -147,21 +138,96 @@ window.addEventListener("scroll", () => {
     }
   });
 });
-document.getElementById("contactForm").addEventListener("submit", function (e) {
-  e.preventDefault();
 
-  fetch(this.action, {
-    method: "POST",
-    body: new FormData(this),
-    headers: { Accept: "application/json" },
-  })
-    .then((response) => {
-      if (response.ok) {
-        alert("Message sent successfully!");
-        this.reset();
-      } else {
-        throw new Error("Failed to send");
-      }
+document
+  .getElementById("contactForm")
+  .addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    document.querySelectorAll(".error-message").forEach((msg) => msg.remove());
+
+    let isValid = true;
+
+    const firstName = document.getElementById("firstName").value.trim();
+    const lastName = document.getElementById("lastName").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const service = document.getElementById("service").value;
+    const message = document.getElementById("message").value.trim();
+
+    // Regex patterns
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const phoneRegex =
+      /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/;
+
+    // Validation checks
+    if (!firstName) {
+      showError("firstName", "First name is required");
+      isValid = false;
+    }
+    if (!lastName) {
+      showError("lastName", "Last name is required");
+      isValid = false;
+    }
+    if (!email) {
+      showError("email", "Email is required");
+      isValid = false;
+    } else if (!emailRegex.test(email)) {
+      showError("email", "Enter a valid email (e.g., user@example.com)");
+      isValid = false;
+    }
+    if (phone && !phoneRegex.test(phone)) {
+      showError("phone", "Enter a valid phone number (e.g., 123-456-7890)");
+      isValid = false;
+    }
+    if (!service) {
+      showError("service", "Please select a service");
+      isValid = false;
+    }
+    if (!message) {
+      showError("message", "Message is required");
+      isValid = false;
+    } else if (message.length < 10) {
+      showError("message", "Message must be at least 10 characters");
+      isValid = false;
+    }
+
+    // Stop form submission if validation fails
+    if (!isValid) {
+      return;
+    }
+
+    // If form is valid, proceed with submission
+    fetch(event.target.action, {
+      method: "POST",
+      body: new FormData(event.target),
+      headers: { Accept: "application/json" },
     })
-    .catch(() => alert("Error sending message"));
-});
+      .then((response) => {
+        if (response.ok) {
+          alert("Form submitted successfully! ✅");
+          event.target.reset();
+        } else {
+          throw new Error("Form submission failed");
+        }
+      })
+      .catch(() => alert("Network error. Please try again later."));
+  });
+
+//show error messages
+function showError(fieldId, message) {
+  const field = document.getElementById(fieldId);
+  const errorMessageId = `error${
+    fieldId.charAt(0).toUpperCase() + fieldId.slice(1)
+  }`;
+  let errorMessageElement = document.getElementById(errorMessageId);
+
+  if (!errorMessageElement) {
+    errorMessageElement = document.createElement("div");
+    errorMessageElement.className = "error-message";
+    errorMessageElement.id = errorMessageId;
+    field.parentNode.insertBefore(errorMessageElement, field.nextSibling);
+  }
+
+  errorMessageElement.textContent = message;
+}
