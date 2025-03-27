@@ -143,4 +143,24 @@ const sections = document.querySelectorAll('section');
                 link.classList.add('active');
             }
         });
+    });// Add this JavaScript (keep your existing regex validation)
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Your existing validation here
+      
+      fetch(this.action, {
+        method: 'POST',
+        body: new FormData(this),
+        headers: { 'Accept': 'application/json' }
+      })
+      .then(response => {
+        if (response.ok) {
+          alert('Message sent successfully!'); // Replace with your UI feedback
+          this.reset();
+        } else {
+          throw new Error('Failed to send');
+        }
+      })
+      .catch(() => alert('Error sending message'));
     });

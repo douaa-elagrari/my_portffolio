@@ -749,6 +749,7 @@ a {
     grid-template-rows: 1fr 1fr;
     gap: 20%;
     margin-right: 50px;
+    margin-left: 10px;
   }
   .skills{
     margin-left: 0;

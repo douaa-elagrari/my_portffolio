@@ -166,11 +166,7 @@
               <span class="text" id="typed"></span>
             </h3>
             <p>
-              Web developer and UI/UX designer with over 3 years of
-              experience,<br />
-              passionate about crafting seamless digital experiences.<br />
-              Computer scientist and AI engineer, driven by innovation and
-              problem-solving.
+              "Full-stack web/mobile dev with AI/ML integration. Experts in data science, <br>predictive analytics & custom AI models. We handle data management <br> & database solutions. Delivering smart, scalable systems from concept to deployment."
             </p>
             <div class="container">
               <div class="social_media">
@@ -509,36 +505,45 @@
     <section id="contact" class="contact">
       <div class="form-container" data-aos="slide-right">
         <h2>Let's work together!</h2>
-        <form id="contactForm">
+        <form id="contactForm" action="https://formspree.io/f/xovelgno"
+        method="POST">
           <div class="form-group">
-            <input
+            <input name="fname"
               type="text"
               id="firstName"
               placeholder="First Name"
               required
             />
-            <input type="text" id="lastName" placeholder="Last Name" required />
+            <input type="text" name="lname" id="lastName" placeholder="Last Name" required />
           </div>
           <div class="form-group">
             <input
               type="email"
+              name="email"
               id="email"
               placeholder="Email Address"
               required
             />
-            <input type="tel" id="phone" placeholder="Phone Number" />
+            <input type="tel" name="tel" id="phone" placeholder="Phone Number" />
           </div>
-          <select id="service" required>
+          <select name="service" id="service" required>
             <option value="">Choose a service</option>
             <option value="web">Web Development</option>
-            <option value="design">UI/UX Design</option>
-            <option value="marketing">Digital Marketing</option>
+            <option value="design">Mobile Development</option>
+            <option value="marketing">AI & Machine Learning Integration</option>
+            <option value="design">Data Science & Market Analysis</option>
+            <option value="design">AI Model Development & Deployment</option>
+            <option value="design">Data Management & Database Solutions</option>
           </select>
           <textarea
             id="message"
+            name="message"
             placeholder="Enter a message"
             required
           ></textarea>
+          <!-- Add these INSIDE your <form> tag (anywhere) -->
+<input type="hidden" name="_subject" value="New Contact Form Submission">
+<input type="text" name="_gotcha" style="display:none"> <!-- Anti-spam -->
           <button type="submit" class="submit">Submit</button>
         </form>
       </div>
