@@ -824,6 +824,9 @@ textarea {
   align-items: center;
   transition: all 0.3s ease;
   box-shadow: 7px 10px 20px #222222;
+  max-width: 100%; 
+  overflow: hidden; 
+  word-wrap: break-word;
 }
 
 .contact-me div:hover {
