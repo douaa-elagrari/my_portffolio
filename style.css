@@ -573,6 +573,7 @@ button a {
       margin-top: 200px;
       display: flex;
       flex-direction: column;
+    
     }
 
     .form-container {
@@ -643,7 +644,7 @@ button a {
 .progress-value {
   font-size: 1.5rem;
   font-weight: 600;
-  position: relative; /* Ensures text appears above the white circle */
+  position: relative;
   z-index: 1;
 }
 
@@ -781,6 +782,8 @@ button a {
   text-align: center;
   position: relative;
   z-index: 10;
+  margin-left: 15px;
+  margin-right: 15px;
 }
 
 h2 {
@@ -925,17 +928,17 @@ textarea {
 @media (max-width: 1156px) {
   .form-group {
     flex-direction: column;
+    flex-wrap: wrap;
   }
   .form-container:hover,
   #contact-me:hover {
     animation: glow-border 0s infinite;
   }
-}
+  .form-container,#contact-me{
+    box-shadow: 0 0 0 #222222;
 
-@media (max-width: 1156px) {
-  .form-group {
-    flex-direction: column;
   }
+  
 }
 
 body {
@@ -1003,7 +1006,7 @@ body {
   overflow-x: hidden;
 }
 .error-message {
-    color: #8B0000;
+    color: red;
     font-size: 0.9em;
     margin-top: 0.2em;
   }
