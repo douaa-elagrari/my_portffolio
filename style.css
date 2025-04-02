@@ -827,6 +827,7 @@ textarea {
   max-width: 100%; 
   overflow: hidden; 
   word-wrap: break-word;
+  font-size: 0.9em;
 }
 
 .contact-me div:hover {
