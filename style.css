@@ -161,7 +161,7 @@ a {
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.15);
   margin-bottom: 10px;
 }
-.my_pic::before {
+/* .my_pic::before {
   content: "";
   position: absolute;
   top: -50%;
@@ -183,7 +183,7 @@ a {
   animation: animate 6s linear infinite;
 
   animation-delay: -3s;
-}
+} */
 .my_pic img {
   position: absolute;
   inset: 10px;
