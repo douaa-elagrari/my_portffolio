@@ -784,6 +784,7 @@ button a {
   z-index: 10;
   margin-left: 15px;
   margin-right: 15px;
+  padding-bottom: 100px;
 }
 
 h2 {
@@ -931,15 +932,12 @@ textarea {
     flex-wrap: wrap;
   }
   .form-container:hover,
-  #contact-me:hover {
-    animation: glow-border 0s infinite;
-  }
-  .form-container,#contact-me{
-    box-shadow: 0 0 0 #222222;
-
-  }
-  
+#contact-me:hover:hover {
+  animation: glow-border 0s infinite;
 }
+
+}
+
 
 body {
   overflow-x: hidden;
@@ -1010,3 +1008,9 @@ body {
     font-size: 0.9em;
     margin-top: 0.2em;
   }
+  /* @media (max-width: 400){
+    .form-container:hover,
+  #contact-me:hover:hover {
+    animation: glow-border 0s infinite;
+  }
+} */
