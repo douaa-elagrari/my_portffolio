@@ -29,7 +29,7 @@ a {
   align-items: center;
   padding: 1rem 1.5rem;
   z-index: 100;
-  margin: 0 ;
+  margin: 0;
   padding-right: 7.5rem;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
 }
@@ -573,7 +573,6 @@ button a {
       margin-top: 200px;
       display: flex;
       flex-direction: column;
-    
     }
 
     .form-container {
@@ -931,13 +930,21 @@ textarea {
     flex-direction: column;
     flex-wrap: wrap;
   }
+
+  #contact-me {
+    margin-top: 100px;
+  }
   .form-container:hover,
-#contact-me:hover:hover {
-  animation: glow-border 0s infinite;
+  #contact-me:hover:hover {
+    animation: glow-border 0s infinite;
+  }
 }
-
+@media (max-width: 430px) {
+  .form-container,
+  #contact-me:hover {
+    box-shadow: none;
+  }
 }
-
 
 body {
   overflow-x: hidden;
@@ -1004,8 +1011,7 @@ body {
   overflow-x: hidden;
 }
 .error-message {
-    color: red;
-    font-size: 0.9em;
-    margin-top: 0.2em;
-  }
- 
+  color: red;
+  font-size: 0.9em;
+  margin-top: 0.2em;
+}
